@@ -215,10 +215,12 @@
                             'time': 1500,
                             
                         });
+                        
                         if (requestData.status) {
                             setTimeout( function () {
                                 //goUrl({});
                                  goUrl({'type':'load','url':'/login.php'});
+                                 
                             }, 1500);
                         }
                     }});
