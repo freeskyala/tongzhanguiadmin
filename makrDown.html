@@ -1,0 +1,619 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<title>掌柜后台,够简单！</title>
+<meta name='keywords' content=''/>
+<meta name='description' content=''/>
+<link rel='icon' href='/yidan/images/favicon.ico' type='image/x-icon' />
+<link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+<link rel='stylesheet' href='/yidan/css/yidan.css'/>
+<link rel='stylesheet' href='/yidan/css/admin.css'/>
+
+<script src='/yidan/js/jquery-1.7.1.min.js'></script>
+<script src='/yidan/js/jquery.nicescroll.js'></script>
+<script src='/yidan/js/ajaxupload.js'></script>
+<script src='/yidan/js/yidan.js'></script>
+<script src='/yidan/js/gooddate/WdatePicker.js'></script>
+<script src='/yidan/js/edit/kindeditor.js'></script>
+<script src='/yidan/js/edit/zh_CN.js'></script>
+<script src='/yidan/js/base64/my_core-min.js'></script>
+<script src='/yidan/js/base64/my_enc-base64-min.js'></script>
+<link rel='stylesheet'  href='/yidan/js/edit/themes/default/default.css' />
+<link rel='stylesheet' href='/yidan/css/markdown/editormd.css'/>
+<script src='/yidan/js/markdown/editormd.js'></script>
+</head>
+<body class='f-ff1 f-cb'>
+<div class='alert'>
+    <div class='alert_div' id='alert_div'>
+        <div class='head' id='alert_head'>
+            <span class='title'></span>
+            <span class='close hover'><i class='fa fa-close'></i></span>
+            <span class='change hover'><i class='fa fa-expand'></i></span>
+        </div>
+        <div class='alert_content' id='alert_content'></div>
+    </div>
+    <div class='alert_msg_body'>
+        <span class='msg_left warning'><i class=''></i></span>
+        <span class='msg_content'></span>
+        <span class='msg_right'></span>
+    </div>
+</div>
+
+<style>
+.m-form .ke-edit{
+    height:200px !important;
+}
+body{
+    padding:10px;
+}
+.m-form .ke-edit{
+    height:500px !important;
+}
+.goTop{
+    display:none !important;
+}
+.editormd-preview-container{
+    padding: 5px  !important;
+}
+</style>
+
+<script>
+//http://www.jqueryfuns.com/resource/view/1667
+    $(document).ready(function () {
+        G = {
+            windowHeight: $(window).height(),
+            windowWidth: $(window).width(),    
+            staticDomain:'/'
+        };
+        init_com();
+        init_form();
+        init_alert();
+    });
+</script>            
+<div class='m-form append' style='width: 700;'>
+    <form name='' action='/saveCode.php' method='post'>
+        <fieldset>
+            <div class='formitm'>
+                <label class='lab'>title：</label>
+                <div class='ipt'>
+                    <input type='text' name='title' value='佟掌柜开源作品' class='u-ipt hover' />
+                </div>
+            </div>
+
+            <div class='formitm'>
+                <label class='lab'>keyword：</label>
+                <div class='ipt'>
+                    <input type='text' name='keyword' value='掌柜' class='u-ipt hover' />
+                </div>
+            </div>
+            
+            <div class='formitm'>
+                <label class='lab'>editType：</label>
+                <div class='ipt'>
+                    <span class='u-ipt select select_model_select'>
+                        <span class='input_select_div'>
+                            <span class="input_select_tag_one nosubmit">
+                            </span>
+                        </span>
+
+                        <ul class='dropdown_menu' name='editType'>
+                                                        <li class='dropdown_menu_li hover'   val='1'><a>文章</a></li>
+                                                        <li class='dropdown_menu_li hover selected'   val='2'><a>代码</a></li>
+                                                    </ul>
+                        <i class='fa fa-angle-down'></i>
+                    </span>
+                </div>
+            </div>
+            
+            <div class='formitm'>
+                <label class='lab'>catIdStr：</label>
+                <div class='ipt'>
+                    <span class='u-ipt select select_model_select'>
+                        <span class='input_select_div'>
+                            <span class="input_select_tag_one nosubmit">
+                            </span>
+                        </span>
+
+                        <ul class='dropdown_menu' name='catIdStr'>
+                                                        <li class='dropdown_menu_li hover'   val='0'><a>选择分类</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='430'><a>前端</a></li>
+                                                        <li class='dropdown_menu_li hover selected'   val='431'><a>后端</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='432'><a>运维</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='433'><a>阅读</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='434'><a>萌物</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='435'><a>影视</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='436'><a>热点</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='437'><a>不可见</a></li>
+                                                    </ul>
+                        <i class='fa fa-angle-down'></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class='formitm'>
+                <label class='lab'>tagIdStr：</label>
+                <div class='ipt'>
+                <div class='ipt'>
+                    <!-- select_model_tag select_model_select select_model_tag-->
+                    <span class='u-ipt select select_model_tag'>
+                        <span class='input_select_div'>
+                            <input type='text' value='' class='input_select u-ipt'/>
+                        </span>
+                        <ul class='dropdown_menu' name='tagIdStr'>
+                                                        <li class='dropdown_menu_li hover'   val='428'><a>转载</a></li>
+                                                        <li class='dropdown_menu_li hover selected'   val='427'><a>原创</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='426'><a>掌柜框架</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='425'><a>隐藏文章</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='424'><a>爬虫</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='423'><a>首页列表</a></li>
+                                                        <li class='dropdown_menu_li hover selected'   val='422'><a>phalcon</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='421'><a>thinkphp</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='420'><a>sphinx</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='419'><a>jquery</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='418'><a>js</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='417'><a>mysql</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='416'><a>nginx</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='415'><a>linux</a></li>
+                                                        <li class='dropdown_menu_li hover'   val='414'><a>php</a></li>
+                                                    </ul>
+                        <i class='fa fa-angle-down'></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class='formitm'>
+                <label class='lab'>contentDraft：</label>
+                <div class='ipt'>
+                    <textarea class='u-ipt hover u-iptextarea' name='contentDraft'>支持“标准”Markdown / CommonMark和Github风格的语法，也可变身为代码编辑器；
+- 支持实时预览、图片（跨域）上传、预格式文本/代码/表格插入、代码折叠、搜索替换、只读模式、自定义样式主题和多语言语法高亮等功能</textarea>
+                </div>
+            </div>
+
+            <div class='formitm'>
+                <label class='lab'>remark：</label>
+                <div class='ipt'>
+                    <textarea style='height:50px;' class='u-ipt hover u-iptextarea' name='remark'></textarea>
+                </div>
+            </div>
+
+            <input type='hidden' name="id" value='9'/>
+                   
+            <div class='formitm'>
+                <label class='lab'>content：</label>
+                <div class='ipt'>
+                                        <div id="markdownEditor">                                           
+                    <textarea name="content"  style='visibility:hidden;height:250px;' class='u-ipt hover u-iptextarea editContent'>
+### 主要特性
+
+- 支持“标准”Markdown / CommonMark和Github风格的语法，也可变身为代码编辑器；
+- 支持实时预览、图片（跨域）上传、预格式文本/代码/表格插入、代码折叠、搜索替换、只读模式、自定义样式主题和多语言语法高亮等功能；
+- 支持ToC（Table of Contents）、Emoji表情、Task lists、@链接等Markdown扩展语法；
+- 支持TeX科学公式（基于KaTeX）、流程图 Flowchart 和 时序图 Sequence Diagram;
+- 支持识别和解析HTML标签，并且支持自定义过滤标签解析，具有可靠的安全性和几乎无限的扩展性；
+- 支持 AMD / CMD 模块化加载（支持 Require.js & Sea.js），并且支持自定义扩展插件；
+- 兼容主流的浏览器（IE8+）和Zepto.js，且支持iPad等平板设备；
+- 支持自定义主题样式；
+
+# Editor.md
+
+![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
+
+![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
+
+**目录 (Table of Contents)**
+
+[TOCM]
+
+[TOC]
+
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+# Heading 1 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+## Heading 2 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+### Heading 3 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+#### Heading 4 link [Heading link](https://github.com/pandao/editor.md "Heading link") Heading link [Heading link](https://github.com/pandao/editor.md "Heading link")
+##### Heading 5 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+###### Heading 6 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+
+#### 标题（用底线的形式）Heading (underline)
+
+This is an H1
+=============
+
+This is an H2
+-------------
+
+### 字符效果和横线等
+                
+----
+
+~~删除线~~ <s>删除线（开启识别HTML标签时）</s>
+*斜体字*      _斜体字_
+**粗体**  __粗体__
+***粗斜体*** ___粗斜体___
+
+上标：X<sub>2</sub>，下标：O<sup>2</sup>
+
+**缩写(同HTML的abbr标签)**
+
+> 即更长的单词或短语的缩写形式，前提是开启识别HTML标签时，已默认开启
+
+The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.
+
+### 引用 Blockquotes
+
+> 引用文本 Blockquotes
+
+引用的行内混合 Blockquotes
+                    
+> 引用：如果想要插入空白换行`即<br />标签`，在插入处先键入两个以上的空格然后回车即可，[普通链接](http://localhost/)。
+
+### 锚点与链接 Links
+
+[普通链接](http://localhost/)
+
+[普通链接带标题](http://localhost/ "普通链接带标题")
+
+直接链接：<https://github.com>
+
+[锚点链接][anchor-id] 
+
+[anchor-id]: http://www.this-anchor-link.com/
+
+GFM a-tail link @pandao
+
+> @pandao
+
+### 多语言代码高亮 Codes
+
+#### 行内代码 Inline code
+
+执行命令：`npm install marked`
+
+#### 缩进风格
+
+即缩进四个空格，也做为实现类似`<pre>`预格式化文本(Preformatted Text)的功能。
+
+    <?php
+        echo "Hello world!";
+    ?>
+    
+预格式化文本：
+
+    | First Header  | Second Header |
+    | ------------- | ------------- |
+    | Content Cell  | Content Cell  |
+    | Content Cell  | Content Cell  |
+
+#### JS代码　
+
+```javascript
+function test(){
+	console.log("Hello world!");
+}
+ 
+(function(){
+    var box = function(){
+        return box.fn.init();
+    };
+
+    box.prototype = box.fn = {
+        init : function(){
+            console.log('box.init()');
+
+			return this;
+        },
+
+		add : function(str){
+			alert("add", str);
+
+			return this;
+		},
+
+		remove : function(str){
+			alert("remove", str);
+
+			return this;
+		}
+    };
+    
+    box.fn.init.prototype = box.fn;
+    
+    window.box =box;
+})();
+
+var testBox = box();
+testBox.add("jQuery").remove("jQuery");
+```
+
+#### HTML代码 HTML codes
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <mate charest="utf-8" />
+        <title>Hello world!</title>
+    </head>
+    <body>
+        <h1>Hello world!</h1>
+    </body>
+</html>
+```
+
+### 图片 Images
+
+Image:
+
+![](https://pandao.github.io/editor.md/examples/images/4.jpg)
+
+> Follow your heart.
+
+![](https://pandao.github.io/editor.md/examples/images/8.jpg)
+
+> 图为：厦门白城沙滩
+
+图片加链接 (Image + Link)：
+
+[![](https://pandao.github.io/editor.md/examples/images/7.jpg)](https://pandao.github.io/editor.md/examples/images/7.jpg "李健首张专辑《似水流年》封面")
+
+> 图为：李健首张专辑《似水流年》封面
+                
+----
+
+### 列表 Lists
+
+#### 无序列表（减号）Unordered Lists (-)
+                
+- 列表一
+- 列表二
+- 列表三
+     
+#### 无序列表（星号）Unordered Lists (*)
+
+* 列表一
+* 列表二
+* 列表三
+
+#### 无序列表（加号和嵌套）Unordered Lists (+)
+                
++ 列表一
++ 列表二
+    + 列表二-1
+    + 列表二-2
+    + 列表二-3
++ 列表三
+    * 列表一
+    * 列表二
+    * 列表三
+
+#### 有序列表 Ordered Lists (-)
+                
+1. 第一行
+2. 第二行
+3. 第三行
+
+#### GFM task list
+
+- [x] GFM task list 1
+- [x] GFM task list 2
+- [ ] GFM task list 3
+    - [ ] GFM task list 3-1
+    - [ ] GFM task list 3-2
+    - [ ] GFM task list 3-3
+- [ ] GFM task list 4
+    - [ ] GFM task list 4-1
+    - [ ] GFM task list 4-2
+                
+----
+                    
+### 绘制表格 Tables
+
+| 项目        | 价格   |  数量  |
+| --------   | -----:  | :----:  |
+| 计算机      | $1600   |   5     |
+| 手机        |   $12   |   12   |
+| 管线        |    $1    |  234  |
+                    
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell 
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+| Function name | Description                    |
+| ------------- | ------------------------------ |
+| `help()`      | Display the help window.       |
+| `destroy()`   | **Destroy your computer!**     |
+
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
+
+| Item      | Value |
+| --------- | -----:|
+| Computer  | $1600 |
+| Phone     |   $12 |
+| Pipe      |    $1 |
+                
+----
+
+#### 特殊符号 HTML Entities Codes
+
+&copy; &  &uml; &trade; &iexcl; &pound;
+&amp; &lt; &gt; &yen; &euro; &reg; &plusmn; &para; &sect; &brvbar; &macr; &laquo; &middot; 
+
+X&sup2; Y&sup3; &frac34; &frac14;  &times;  &divide;   &raquo;
+
+18&ordm;C  &quot;  &apos;
+
+### Emoji表情 :smiley:
+
+> Blockquotes :star:
+
+#### GFM task lists & Emoji & fontAwesome icon emoji & editormd logo emoji :editormd-logo-5x:
+
+- [x] :smiley: @mentions, :smiley: #refs, [links](), **formatting**, and <del>tags</del> supported :editormd-logo:;
+- [x] list syntax required (any unordered or ordered list supported) :editormd-logo-3x:;
+- [x] [ ] :smiley: this is a complete item :smiley:;
+- [ ] []this is an incomplete item [test link](#) :fa-star: @pandao; 
+- [ ] [ ]this is an incomplete item :fa-star: :fa-gear:;
+    - [ ] :smiley: this is an incomplete item [test link](#) :fa-star: :fa-gear:;
+    - [ ] :smiley: this is  :fa-star: :fa-gear: an incomplete item [test link](#);
+ 
+#### 反斜杠 Escape
+
+\*literal asterisks\*
+            
+### 科学公式 TeX(KaTeX)
+                    
+$$E=mc^2$$
+
+行内的公式$$E=mc^2$$行内的公式，行内的$$E=mc^2$$公式。
+
+$$\(\sqrt{3x-1}+(1+x)^2\)$$
+                    
+$$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$
+
+多行公式：
+
+```math
+\displaystyle
+\left( \sum\_{k=1}^n a\_k b\_k \right)^2
+\leq
+\left( \sum\_{k=1}^n a\_k^2 \right)
+\left( \sum\_{k=1}^n b\_k^2 \right)
+```
+
+```katex
+\displaystyle 
+    \frac{1}{
+        \Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{
+        \frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {
+        1+\frac{e^{-6\pi}}
+        {1+\frac{e^{-8\pi}}
+         {1+\cdots} }
+        } 
+    }
+```
+
+```latex
+f(x) = \int_{-\infty}^\infty
+    \hat f(\xi)\,e^{2 \pi i \xi x}
+    \,d\xi
+```
+                
+### 绘制流程图 Flowchart
+
+```flow
+st=>start: 用户登陆
+op=>operation: 登陆操作
+cond=>condition: 登陆成功 Yes or No?
+e=>end: 进入后台
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
+```
+                    
+### 绘制序列图 Sequence Diagram
+                    
+```seq
+Andrew->China: Says Hello 
+Note right of China: China thinks\nabout it 
+China-->Andrew: How are you? 
+Andrew->>China: I am good thanks!
+```
+
+### End
+</textarea>
+                    </div>
+                                   </div>
+            </div>
+            <textarea name="markdownContent"  style='display:none;height:auto;' class='u-ipt hover u-iptextarea markdownContent'></textarea>         
+            <div class='formitm formitm_button'>
+                <button type='button' class='btn-info hover btn append-submit'>保存</button>
+                <button type='button' class='btn-primary hover btn append-cancle'>取消</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+            
+<script>
+ $(document).ready(function () {
+     $('.select .dropdown_menu .selected').trigger("click");
+     $('.dropdown_menu').hide();
+ });
+</script>    <style>
+.m-form .formitm .fa {
+    color: #666;
+    font-size: 16px;
+}    
+</style> 
+<script>
+var markdownEditor;
+$(function() {
+    /*
+    markdownEditor = editormd("markdownEditor", {
+        width: "100%",
+        height: 640,
+        syncScrolling: "single",
+        saveHTMLToTextarea : true,   
+        path: G.staticDomain+"yidan/js/lib/",
+        pluginPath:G.staticDomain+"yidan/js/markdown/plugins/",
+        
+    });
+    */
+    markdownEditor = editormd("markdownEditor", {
+        width: "100%",
+        height: 500,
+        path: G.staticDomain+"yidan/js/lib/",
+        pluginPath:G.staticDomain+"yidan/js/markdown/plugins/",
+        //theme : "dark",
+        //previewTheme : "dark",
+        //editorTheme : "pastel-on-dark",
+        //markdown : md,
+        //codeFold : true,
+        //syncScrolling : false,
+        saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
+        searchReplace : true,
+        //watch : false,                // 关闭实时预览
+        //htmlDecode : "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启    
+        //toolbar  : false,             //关闭工具栏
+        //previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
+        emoji : true,
+        taskList : true,
+        tocm            : true,         // Using [TOCM]
+        tex : true,                   // 开启科学公式TeX语言支持，默认关闭
+        flowChart : true,             // 开启流程图支持，默认关闭
+        sequenceDiagram : true,       // 开启时序/序列图支持，默认关闭,
+        //dialogLockScreen : false,   // 设置弹出层对话框不锁屏，全局通用，默认为true
+        //dialogShowMask : false,     // 设置弹出层对话框显示透明遮罩层，全局通用，默认为true
+        //dialogDraggable : false,    // 设置弹出层对话框不可拖动，全局通用，默认为true
+        //dialogMaskOpacity : 0.4,    // 设置透明遮罩层的透明度，全局通用，默认值为0.1
+        //dialogMaskBgColor : "#000", // 设置透明遮罩层的背景颜色，全局通用，默认为#fff
+        imageUpload : true,
+        imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+        imageUploadURL :  '/blogArticle-markdownUpload.html',
+     
+        
+    });    
+ });
+</script>
+<div id='goTop' class='goTop' onclick='goTop();' title='返回顶部'>
+     <i class='fa fa-angle-up'></i>
+</div>
+</body>
+</html>

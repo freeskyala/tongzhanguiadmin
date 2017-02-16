@@ -1,0 +1,131 @@
+.articleDetail{
+    width: 97%;
+    height: auto;
+    float: left;
+    margin-bottom: 15px;
+    position: relative;
+    background: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.articleDetail .title a {
+    color: #444;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 60px;
+}
+.articleDetail .meta{
+    border-bottom: 1px solid #F1F1F1;
+    padding-bottom: 10px;
+}
+.articleDetail .meta span{
+    margin-right: 10px;
+}
+.articleDetail .meta span a{
+    color: #00a67c;
+}
+.articleDetail .meta span .fa{
+    margin-right: 5px;
+}
+.articleDetail .cover{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+.articleDetail .content{
+    line-height: 22px;
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+.articleDetail .content img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.articleDetail .content p{
+
+}
+.editormd-preview {
+    position: relative;
+    left:0px;
+    top:0px;
+    overflow: hidden;
+}
+.articleDetail .editormd .fa-close {
+
+}
+
+
+.articleComment{
+    width: 97%;
+    height: auto;
+    float: left;
+    margin-bottom: 15px;
+    position: relative;
+    background: #fff;
+    min-height: 100px;
+    padding: 20px;
+    cursor: pointer;
+}
+.commentList .commentListli {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #F0F0F0;
+    margin-top: 10px;
+    padding-top: 2px;
+}
+.commentList .commentListli .comment-head{
+    width: 50px;
+    float: left;
+    height: 50px;
+    margin-bottom: 10px;
+}
+.commentList .commentListli .user_info{
+    float: left;
+    margin-left: 10px;
+    margin-top:-3px;
+}
+.commentList .commentListli .comment{
+    float: left;
+    width: 100%;
+    height:auto;
+}
+.commentList .commentListli .comment .fa-comment-o{
+    margin-right: 5px;
+}
+
+.commentList .commentListli .comment .fa-edit{
+    margin-right: 10px;
+    float: left;
+    margin-top: 5px;
+}
+
+
+.commentList .commentListli .comment-good{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.commentList .commentListli .comment-bad{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.commentList .commentListli .commentContent{
+    padding-bottom: 10px;
+    height:auto;
+    margin-left: 60px;
+}
+
+.commentList .commentListli  .tool .fa{
+    cursor: pointer;
+}
+
+.commentList  .edit-a-pageSize{
+    display:none;
+}
+

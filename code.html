@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<title>简简单单可以有^_^</title>
+<meta name='keywords' content=''/>
+<meta name='description' content=''/>
+<link rel='icon' href='/yidan/images/favicon.ico' type='image/x-icon' />
+<link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+<link rel='stylesheet' href='/yidan/css/yidan.css'/>
+<link rel='stylesheet' href='/yidan/css/admin.css'/>
+ 
+
+<script src='/yidan/js/jquery-1.7.1.min.js'></script>
+<script src='/yidan/js/jquery.nicescroll.js'></script>
+<script src='/yidan/js/upload/webuploader.js'></script>
+<script src='/yidan/js/yidan.js'></script>
+<script src='/yidan/js/gooddate/WdatePicker.js'></script>
+<script src='/yidan/js/edit/kindeditor.js'></script>
+<script src='/yidan/js/edit/zh_CN.js'></script>
+<script src='/yidan/js/base64/my_core-min.js'></script>
+<script src='/yidan/js/base64/my_enc-base64-min.js'></script>
+<link rel='stylesheet'  href='/yidan/js/edit/themes/default/default.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/lib/codemirror.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/addon/hint/show-hint.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/3024-day.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/3024-night.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/ambiance.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/base16-dark.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/base16-light.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/blackboard.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/cobalt.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/eclipse.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/elegant.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/erlang-dark.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/lesser-dark.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/mbo.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/mdn-like.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/midnight.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/monokai.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/neat.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/neo.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/night.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/paraiso-dark.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/paraiso-light.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/pastel-on-dark.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/rubyblue.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/solarized.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/the-matrix.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/tomorrow-night-eighties.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/twilight.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/vibrant-ink.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/xq-dark.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/theme/xq-light.css' />
+<link rel='stylesheet' href='/yidan/js/lib/codemirror/addon/dialog/dialog.css' />
+
+<script src='/yidan/js/lib/codemirror/lib/codemirror.js'></script>
+<script src='/yidan/js/lib/codemirror/addon/hint/show-hint.js'></script>
+<script src='/yidan/js/lib/codemirror/addon/hint/javascript-hint.js'></script>
+<script src='/yidan/js/lib/codemirror/addon/selection/active-line.js'></script>
+<script src='/yidan/js/lib/codemirror/addon/edit/matchbrackets.js'></script>
+<script src='/yidan/js/lib/codemirror/addon/dialog/dialog.js'></script>
+<script src='/yidan/js/lib/codemirror/addon/search/searchcursor.js'></script>
+<script src='/yidan/js/lib/codemirror/addon/search/search.js'></script>
+<script src='/yidan/js/lib/codemirror/addon/fold/xml-fold.js'></script>
+<script src='/yidan/js/lib/codemirror/addon/edit/matchtags.js'></script>
+<script src='/yidan/js/lib/codemirror/mode/xml/xml.js'></script>
+<script src='/yidan/js/lib/codemirror/mode/htmlmixed/htmlmixed.js'></script>
+<script src='/yidan/js/lib/codemirror/mode/javascript/javascript.js'></script>
+<script src='/yidan/js/lib/codemirror/mode/css/css.js'></script>
+<script src='/yidan/js/lib/codemirror/mode/php/php.js'></script>
+<script src='/yidan/js/lib/codemirror/mode/clike/clike.js'></script>
+<style>
+body{
+    padding:10px;
+}
+.CodeMirror {
+      border: 1px solid #eee;
+      height: auto;
+}
+.CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.search {
+    padding-bottom: 0px;
+    padding-top:10px;
+}
+.styled-background { background-color: #4C4A4A; }
+.myCode{
+}
+.goTop{
+    display: none !important;
+}
+.info {
+    width: 100%;
+    float:left;
+    padding: 5px 0px 5px 0px;
+    font-size: 15px;
+    border: 1px solid #eee;
+    background-color: #eee;
+
+}
+.info span{
+   float: left;
+}
+.info span .fa-save{
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.cm-s-monokai span.cm-error {
+    background:none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+    G = {
+        windowHeight: $(window).height(),
+        windowWidth: $(window).width()
+    };
+    //http://justcoding.iteye.com/blog/2299166
+   //代码类型
+    var codeModel = {html:'text/html',css:'text/css',js:'text/javascript',php:'application/x-httpd-php'};
+    //初始化编辑器
+    var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+      lineNumbers: true,
+      //styleActiveLine: true,
+      lineWrapping: true,
+      matchBrackets: true,
+      //mode:'text/php',//mode: 'text/html', text/css application/x-httpd-php text/javascript
+      mode: codeModel.php,
+      viewportMargin: Infinity,
+      //是否编辑
+      //readOnly : 'nocursor',
+      height: '200px',
+      //autoMatchParens: true,
+      matchTags: {bothTags: true},
+      theme:'monokai'
+    });
+
+    //CodeMirror.commands.save = function(){
+    $(document).on('click', '.fa-save', function (event) {
+        event.preventDefault();
+        var action  = $('#action').val();
+        var content = getBase64(editor.getDoc().getValue());
+        $.ajax({url: action, type: 'POST', dataType: 'json', data: {content:content}, success: function (requestData) {
+
+            alert({
+                'content': requestData.msg,
+                'model': 'msg',
+                'close': requestData.status ? 'both' : 'both',
+                'type': requestData.status ? 'success' : 'failed',
+                'time': 1500
+            });
+            /*
+            setTimeout(function () {
+            goUrl({});
+            },1500);
+            */
+
+        }});
+        //p(editor.getDoc().getValue());
+        //alert('Saving');
+    });
+editor.markText({line: 37, ch: 0}, {line: 38, ch: 0}, {className: 'styled-background'});
+});
+</script>
+</head>
+<body class='f-ff1 f-cb'>
+<div class='alert'>
+    <div class='alert_div' id='alert_div'>
+        <div class='head' id='alert_head'>
+            <span class='title'></span>
+            <span class='close hover'><i class='fa fa-close'></i></span>
+            <span class='change hover'><i class='fa fa-expand'></i></span>
+        </div>
+        <div class='alert_content' id='alert_content'></div>
+    </div>
+    <div class='alert_msg_body'>
+        <span class='msg_left warning'><i class=''></i></span>
+        <span class='msg_content'></span>
+        <span class='msg_right'></span>
+    </div>
+</div>
+<div class='info'><span><i class="fa fa-save"></i></span><span>index.php</span>
+        <span style='margin-left:20px;'>[phalconDefaultError Undefined index: indexAbou line 38]</span>
+    </div>
+<input type='hidden' name='action' id='action' value='/saveCode.php'/>
+<textarea id='code' name='code' class='myCode'>
+<?php
+/**
+ * func 1 print args
+ * @author  woshitongliango@126.com
+ * @version 1.0
+ * @param   string int bool array res obj ……
+ * @return
+ * @example
+ * p('func 1 print args  参数打印',__DIR__,1,true,['hello'=>'world']);die;
+ * @todo
+ */
+function p() {
+    $args = func_get_args();
+    //https://docs.phalconphp.com/zh/latest/api/Phalcon_Debug_Dump.html
+    foreach ($args as $arg) {
+        if ((APP_MODEL == 'MVC' || APP_MODEL == 'MICRO' || APP_MODEL == 'API') && CLIENTIP != '127.0.0.1') {
+            echo (new \Phalcon\Debug\Dump())->variable($arg);
+        } else {
+            if (is_array($arg)) {
+                var_export($arg);
+                echo PHP_EOL;
+            } else {
+                if (is_object($arg)) {
+                    var_export(get_class_methods($arg));
+                    echo PHP_EOL;
+                } else {
+                    echo "[" . date('Y-m-d H:i:s', time()) . "] " . $arg . PHP_EOL;
+                }
+            }
+        }
+    }
+}
+</textarea>
+<div id='goTop' class='goTop' onclick='goTop();' title='返回顶部'>
+     <i class='fa fa-angle-up'></i>
+ </div>
+</body>
+</html>

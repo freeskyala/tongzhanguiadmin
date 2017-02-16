@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<title>简简单单可以有^_^</title>
+<meta name='keywords' content=''/>
+<meta name='description' content=''/>
+<link rel='icon' href='/yidan/images/favicon.ico' type='image/x-icon' />
+<link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+<link rel='stylesheet' href='/yidan/css/yidan.css'/>
+<link rel='stylesheet' href='/yidan/css/admin.css'/>
+ 
+
+<script src='/yidan/js/jquery-1.7.1.min.js'></script>
+<script src='/yidan/js/jquery.nicescroll.js'></script>
+<script src='/yidan/js/upload/webuploader.js'></script>
+<script src='/yidan/js/yidan.js'></script>
+<script src='/yidan/js/gooddate/WdatePicker.js'></script>
+<script src='/yidan/js/edit/kindeditor.js'></script>
+<script src='/yidan/js/edit/zh_CN.js'></script>
+<script src='/yidan/js/base64/my_core-min.js'></script>
+<script src='/yidan/js/base64/my_enc-base64-min.js'></script>
+<link rel='stylesheet'  href='/yidan/js/edit/themes/default/default.css' />
+<script>
+//http://www.jqueryfuns.com/resource/view/1667
+$(document).ready(function () {
+    p('hello world!');
+    G = {
+        windowHeight: $(window).height(),
+        windowWidth: $(window).width()
+    };
+    $('.header_left').width(G.windowWidth - $('.menu').width());
+    $('.main').width(G.windowWidth - $('.menu').width());
+
+    $('.main-content').height(G.windowHeight - $('.header').height());
+    $('#main').height(G.windowHeight - $('.header').height());
+
+    init_com();
+    init_form();
+    init_alert();
+
+
+    //init default menu
+    $('#default_menu').trigger("click");
+    //$('.menu_list_li .li_a_selected').trigger("click");
+    $('.home').trigger("click");
+
+});
+</script>
+</head>
+<body class='f-ff1 f-cb body-height'>
+<div class='alert'>
+    <div class='alert_div' id='alert_div'>
+        <div class='head' id='alert_head'>
+            <span class='title'></span>
+            <span class='close hover'><i class='fa fa-close'></i></span>
+            <span class='change hover'><i class='fa fa-expand'></i></span>
+        </div>
+        <div class='alert_content' id='alert_content'></div>
+    </div>
+    <div class='alert_msg_body'>
+        <span class='msg_left warning'><i class=''></i></span>
+        <span class='msg_content'></span>
+        <span class='msg_right'></span>
+    </div>
+</div>
+<div class='header'>
+    <div class='logo'>
+         <span class='f-fl logo_l'><i class='fa fa-angellist f-f20'></i></span>
+         <span class='f-fl logo_r'>zhangui</span>
+    </div>
+     <div class='header_left c_width'>
+         <span class='h_menu hover'>
+             <a class='move_menu home' href='/index-home.php' >
+             <i class='fa fa-home f-f18 menu_switch'></i>
+             </a>
+         </span>
+         <span class='h_menu hover h_menu_hover'><a  target='_self' class='operation a f-fc1' href='http://tongzhangui.com/'>系统管理<i class='fa fa-gear'></i></a>
+         </span>
+         <span class='h_menu hover'><a  target='_blank' class='operation a f-fc1' href='/code.html'/>代码编辑展示<i class='fa fa-flag'></i></a>
+         </span>
+         <span class='h_menu hover'><a  target='_blank' class='operation a f-fc1' href='/makrDown.html'/>makrDown语法<i class='fa fa-pencil'></i></a>
+         </span>
+
+         <span class='h_menu hover h_menu_hover h_menu_fr' style='margin-right:15px;'>admin<i class='fa fa-angle-down'></i>
+            <ul class='dropdown_menu' style='right:0px;'>
+              <li class='dropdown_menu_li hover f-dn'><a href='#' ><span class='f-fl'>message</span><span class='f-fr'><i class='fa fa-bell'></i></span></a></li>
+              <li class='dropdown_menu_li hover'><a data='1'  class='a_alert' title='setHead' href='/sysAdmin/setHead.php' >setHead</a></li>
+              <li class='dropdown_menu_li hover'><a data='1'  class='a_alert' title='resetPasswd' href='/sysAdmin/resetPasswd.php' >resetPasswd</a></li>
+              <li class='dropdown_menu_li hover divider'><a class='ajax' data='1' href='/sysAdmin/loginOut.php' ><span class='f-fl'>Logout</span><span class='f-fr'><i class='fa fa-power-off'></i></span></a></li>
+            </ul>
+         </span>
+         <span class='h_menu  h_menu_img' style='margin-right: -8px;'><img class='img-circle' id='imageSrc' src='/yidan/images/defaulthead.jpg' /></span>
+
+     </div>
+</div>
+<div class='main-content'>
+    <div class='menu' >
+        <ul class='menu_list'>
+
+
+            <li class='menu_list_li'>
+                <a class='li_a hover menu_group' href='' >
+                    <span class='menu_text_l'><i class='fa fa-user'></i></span>
+                    <span class='menu_text'>用户管理</span>
+                    <span class='menu_text_r'><i class='fa fa-angle-right'></i></span>
+                </a>
+            </li>
+            <div>
+            <li class='menu_list_li'>
+                <a class='li_a hover' href='/sysAdminGroup/index.php' >
+                    <span class='menu_children_text'>无效果</span>
+                </a>             
+            </li>
+            </div>
+
+            <li class='menu_list_li'>
+                <a class='li_a hover menu_group'  href='' >
+                    <span class='menu_text_l'><i class='fa fa-cog'></i></span>
+                    <span class='menu_text'>系统管理</span>
+                    <span class='menu_text_r'><i class='fa fa-angle-right'></i></span>
+                </a>
+            </li>
+            <div>
+            <li class='menu_list_li'>
+             
+                <a class='li_a hover' href='/sysNotice-index.php' >
+                    <span class='menu_children_text'>系统公告</span>
+                </a>
+                <a class='li_a hover' href='/sysLanguage/index.php' >
+                    <span class='menu_children_text'>无效果</span>
+                </a>
+                            </li>
+            </div>
+            
+            
+            <li class='menu_list_li'>
+                <a class='li_a hover menu_group' id='default_menu'  href='' >
+                    <span class='menu_text_l'><i class='fa fa-eye'></i></span>
+                    <span class='menu_text'>日志管理</span>
+                    <span class='menu_text_r'><i class='fa fa-angle-right'></i></span>
+                </a>
+            </li>
+            <div>
+            <li class='menu_list_li'>
+                <a class='li_a hover' href='/sysLogError/index.php' >
+                    <span class='menu_children_text'>无效果</span>
+                </a>
+                <a class='li_a hover' href='/sysLogQueue-index.php' >
+                    <span class='menu_children_text'>队列日志</span>
+                </a>            
+            </li>
+            </div>
+ 
+        </ul>
+    </div>
+    <div class='main c_width' id='main'>
+
+
+    </div>
+</div>
+
+
+</body>
+</html>

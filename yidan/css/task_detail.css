@@ -1,0 +1,110 @@
+html{
+    height: 100%;
+}
+body{
+    overflow-y: auto;
+    position: relative;
+    height: 100%;
+}
+.m-form{
+    height: 30px;
+    line-height: 30px;
+    background: #F8FAFE;
+    padding: 10px 10px 10px 0px;
+    font-size: 18px;
+}
+.task-title{
+
+}
+.date,.author{
+    float: right;
+}
+.task-show{
+    line-height: 22px;
+    padding-bottom: 10px;
+}
+.content{
+    white-space: pre;
+}
+
+
+.comment{
+    margin-left: 15px;
+    min-height: 50px;
+    padding-top: 0px;
+    line-height: 22px;
+    float: left;
+    border-radius: 5px;
+    background: #f1f1f1;
+    padding: 5px 10px 5px 10px;
+    position: relative;
+    width: 94%;
+}
+.comment:before {
+    content: '';
+    display: inline-block;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-right: 9px solid #eee;
+    position: absolute;
+    top: 8px;
+    left: -9px;
+}
+.comment .tool{
+
+}
+.comment-head{
+    width: 40px;
+    height: 40px;
+    margin-top: 0px;
+    float: left;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.add-comment {
+    background: url(../images/commentbox.gif) no-repeat center;
+    padding: 5px;
+    border: 1px solid #EBEBEB;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    margin-top:5px;
+    min-height:150px;
+    height:auto;
+    font-size:14px;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+.emoticons{
+    padding-top: 10px;
+}
+.emoticons img{
+    cursor: pointer;
+    margin-right:5px;
+}
+.comment-submit{
+    float: right;
+}
+.comment-cancle{
+    float: right;
+}
+.comment-clear{
+    clear: left;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #E5E5E5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    position: relative;
+
+}
+.comment-good{
+    margin-left:10px;
+}
+.comment-bad{
+    margin-left:10px;
+}
+
+.comment .tool .fa{
+    display:none;
+}
