@@ -9,9 +9,17 @@
                 <tr>
                     <td class='title' colspan='2'>佟掌柜开源作品-后台前段框架-核心开发</td>
                 </tr>
+
+                <tr>
+                    <td>鸣谢: <br/> 前端框架 jquery http://jquery.com/  <br/> 
+                    代码编辑器 codemirror  http://codemirror.net/ <br/>
+                    代码编辑器 kindeditor  http://kindeditor.net/demo.php <br/>
+                    开源在线 Markdown编辑器 https://pandao.github.io/editor.md/ <br/> 
+                    </td>
+                </tr>                
                 <tr>
                     <td>声明 本着开源精神 可免费用于 企业、个人 使用 ；禁止 二次 加工发布 ！！！</td>
-                </tr>                 
+                </tr>                   
                 <tr>
                     <td>开发时间 2016-9-1至2017-2-1 工作之外时间 ps 做开源的 真是奉献与牺牲啊</td>
                 </tr>    
