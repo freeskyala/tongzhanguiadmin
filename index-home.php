@@ -1,4 +1,8 @@
-
+<style>
+    .pane a{
+        color:red;
+    }
+</style>
 <div class='mainNormal'>
     <div class="m-form m-form_float" style="padding-top:0px;">
     </div>
@@ -27,7 +31,11 @@
                     <td>交流群：佟掌柜开源作品交流群 198814859  加群格式 姓名-职业-经验-工作地点</td>
                 </tr>                                  
                 <tr>
-                    <td><a href='http://tongzhangui.com/'>博客地址 http://tongzhangui.com/</a></td>
+                    <td>
+                        <a href='http://tongzhangui.com/'>博客地址 http://tongzhangui.com/</a><br/> 
+                        <a href='http://shareadmin.tongzhangui.com/'>demo地址  http://shareadmin.tongzhangui.com/</a><br/>                        
+                        <a href=https://github.com/freeskyala/tongzhanguiadmin/'>git地址 https://github.com/freeskyala/tongzhanguiadmin/</a>                        
+                    </td>
                 </tr>     
                 <tr>
                     <td>如果你用着还行，那就 赞助我吧 让我走的更远！<br/><img width='200' src='yidan/images/weixin.jpg' /></td>
