@@ -19,13 +19,15 @@
                     代码编辑器 codemirror  http://codemirror.net/ <br/>
                     代码编辑器 kindeditor  http://kindeditor.net/demo.php <br/>
                     开源在线 Markdown编辑器 https://pandao.github.io/editor.md/ <br/> 
+                    百度上传 webuploader  http://fex.baidu.com/webuploader/ <br/>
+                    日历插件 My97DatePicker http://www.my97.net/dp/demo/index.htm                                        
                     </td>
                 </tr>                
                 <tr>
                     <td>声明 本着开源精神 可免费用于 企业、个人 使用 ；禁止 二次 加工发布 ！！！</td>
                 </tr>                   
                 <tr>
-                    <td>开发时间 2016-9-1至2017-2-1 工作之外时间 ps 做开源的 真是奉献与牺牲啊</td>
+                    <td>开发时间 2016-9-1至2016-12-1 工作之外时间 ps 做开源的 真是奉献与牺牲啊</td>
                 </tr>    
                 <tr>
                     <td>交流群：佟掌柜开源作品交流群 198814859  加群格式 姓名-职业-经验-工作地点</td>
@@ -34,9 +36,10 @@
                     <td>
                         <a href='http://tongzhangui.com/'>博客地址 http://tongzhangui.com/</a><br/> 
                         <a href='http://shareadmin.tongzhangui.com/'>demo地址  http://shareadmin.tongzhangui.com/</a><br/>                        
-                        <a href=https://github.com/freeskyala/tongzhanguiadmin/'>git地址 https://github.com/freeskyala/tongzhanguiadmin/</a>                        
+                        <a href=https://github.com/freeskyala/tongzhanguiadmin/'>git地址 https://github.com/freeskyala/tongzhanguiadmin/</a> <br/> 
+                        <iframe style='margin-top:10px;' src="http://ghbtns.com/github-btn.html?user=freeskyala&repo=tongzhanguiadmin&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
                     </td>
-                </tr>     
+                </tr>                     
                 <tr>
                     <td>如果你用着还行，那就 赞助我吧 让我走的更远！<br/><img width='200' src='yidan/images/weixin.jpg' /></td>
                 </tr>                   
