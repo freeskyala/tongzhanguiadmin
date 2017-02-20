@@ -36,7 +36,7 @@
                     <td>
                         <a href='http://tongzhangui.com/'>博客地址 http://tongzhangui.com/</a><br/> 
                         <a href='http://shareadmin.tongzhangui.com/'>demo地址  http://shareadmin.tongzhangui.com/</a><br/>                        
-                        <a href=https://github.com/freeskyala/tongzhanguiadmin/'>git地址 https://github.com/freeskyala/tongzhanguiadmin/</a> <br/> 
+                        <a href='https://github.com/freeskyala/tongzhanguiadmin/'>git地址 https://github.com/freeskyala/tongzhanguiadmin/</a> <br/> 
                         <iframe style='margin-top:10px;' src="http://ghbtns.com/github-btn.html?user=freeskyala&repo=tongzhanguiadmin&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
                     </td>
                 </tr>                     
